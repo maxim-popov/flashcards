@@ -6,9 +6,27 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+    <header class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <nav>
+                    <div class="nav pull-left" style="margin-left: 2em">
+                        <h3>Флэшкарточкер</h3>
+                    </div>
 
-<%= yield %>
+                    <ul class="nav pull-right">
+                        <li><%= link_to "Все карточки",    '#' %></li>
+                        <li><%= link_to "Добавить карточку",    '#' %></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <div id="center">
+        <%= yield %>
+    </div>
 </body>
 </html>
