@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: fashcards_development
+  pool: 5
+  username: maxim
+  password:
+
+test: 
+  adapter: postgresql
+  encoding: utf8
+  database: fashcardst_test
+  pool: 5
+  username: maxim
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: fashcards_production
+  pool: 5
+  username: maxim
+  password:

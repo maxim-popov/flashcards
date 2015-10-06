@@ -9,7 +9,11 @@ config/database.yml
 
 # Ignore bundler config.
 /.bundle
+<<<<<<< HEAD
 /
+=======
+/config/database.yml
+>>>>>>> second-task
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
