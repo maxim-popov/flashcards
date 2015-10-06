@@ -11,12 +11,8 @@
  *= require_self
  *= require_tree .
  */
-<<<<<<< HEAD
 
  #container {
-=======
-#container {
->>>>>>> second-task
   margin: 48px auto;
   width: 960px;
 }
@@ -44,9 +40,5 @@
 }
 
 /* MISC */
+.clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
 
-<<<<<<< HEAD
-.clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
-=======
-.clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
->>>>>>> second-task
