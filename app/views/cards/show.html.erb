@@ -1,0 +1,16 @@
+<p>
+  <strong>Original Text:</strong>
+  <%= @cards.original_text%>
+</p>
+ 
+<p>
+  <strong>Translated Text:</strong>
+  <%= @cards.translated_text %>
+</p>
+
+<p>
+  <strong>Review Date:</strong>
+  <%= @cards.review_date %>
+</p>
+<%= link_to 'Edit', edit_card_path(@cards) %>
+<%= link_to 'Back', cards_path %> 
