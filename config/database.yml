@@ -9,7 +9,7 @@ development:
 test: 
   adapter: postgresql
   encoding: utf8
-  database: fashcardst_test
+  database: fashcards_test
   pool: 5
   username: maxim
   password:

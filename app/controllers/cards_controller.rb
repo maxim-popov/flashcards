@@ -13,39 +13,38 @@ class CardsController < ApplicationController
 
   def edit
     @cards = Card.find(params[:id])
-  end
-
+  end 
 
   def create
-  	@cards = Card.new(card_params)
-  	@cards.review_date = Time.current + + 3.days 
- 
+    @cards = Card.new(card_params)
+    @cards.review_date = Time.current
+
     if @cards.save
-    	redirect_to @cards
+      redirect_to @cards
     else
-    	render 'new'
+      render 'new'
     end
- end
-
- def update
-  @cards = Card.find(params[:id])
+  end
+  
+  def update
+    @cards = Card.find(params[:id])
  
-  if @cards.update(card_params)
+    if @cards.update(card_params)
+      redirect_to @cards
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @cards = Card.find(params[:id])
+    @cards.destroy
+ 
     redirect_to @cards
-  else
-    render 'edit'
   end
-end
 
-def destroy
-  @cards = Card.find(params[:id])
-  @cards.destroy
- 
-  redirect_to @cards
-end
-
- private
-  def card_params
-    params.require(:cards).permit(:original_text, :translated_text, :review_date)
+  private
+    def card_params
+      params.require(:cards).permit(:original_text, :translated_text)
+    end
   end
-end
