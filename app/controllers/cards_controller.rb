@@ -17,7 +17,7 @@ class CardsController < ApplicationController
 
   def create
     @cards = Card.new(card_params)
-    @cards.review_date = Time.current
+    @cards.review_date = Time.current + 3.days
 
     if @cards.save
       redirect_to @cards
@@ -45,6 +45,8 @@ class CardsController < ApplicationController
 
   private
     def card_params
-      params.require(:cards).permit(:original_text, :translated_text)
+      params.require(:card).permit(:original_text, :translated_text)
     end
+
+
   end

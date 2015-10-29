@@ -1,10 +1,10 @@
-<%= form_for @cards do |f| %>
- 
+<%= simple_form_for @cards do |f| %>
+
   <% if @cards.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@cards.errors.count, "error") %> prohibited
-        this article from being saved:
+        this card from being saved:
       </h2>
       <ul>
         <% @cards.errors.full_messages.each do |msg| %>
@@ -13,19 +13,9 @@
       </ul>
     </div>
   <% end %>
- 
-  <p>
-    <%= f.label :original_text %><br>
-    <%= f.text_field :original_text %>
-  </p>
- 
-  <p>
-    <%= f.label :tranlated_text %><br>
-    <%= f.text_area :tranlated_text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+
+
+  <%= f.input :original_text %>
+  <%= f.input :translated_text %>
+  <%= f.submit "Save" %>
 <% end %>
