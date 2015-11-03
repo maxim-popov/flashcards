@@ -2,15 +2,25 @@
 <h2>Here you can see all cards</h2>
 
 <% @cards.each do |card| %>
+  <table>
     <tr>
-      <td><%= card.original_text %></td>
-      <td><%= card.translated_text %></td>
-      <td><%= card.review_date%></td>
+      <td><span class="select">Original: </span><%= card.original_text %></td>
+    </tr>
+
+    <tr>
+      <td><span class="select">Translation: </span><%= card.translated_text %></td>
+    </tr>  
+
+    <tr>
+      <td><span class="select">Review date: </span><%= card.review_date%></td>
+    </tr> 
+    </table> 
       <td><%= link_to 'Show', card_path(card)%></td>
       <td><%= link_to 'Edit', edit_card_path(card) %></td>
       <td><%= link_to 'Destroy', card_path(card),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+
+    <br>
     <br>
 <% end %>
