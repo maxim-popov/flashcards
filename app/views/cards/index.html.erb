@@ -1,11 +1,16 @@
 
-<h2>Здесь ты можешь увидеть все свои карточки</h2>
+<h2>Here you can see all cards</h2>
 
-<% @cards_items.each do |card| %>
+<% @cards.each do |card| %>
     <tr>
       <td><%= card.original_text %></td>
       <td><%= card.translated_text %></td>
-      <td><%= card.review_date %></td>
+      <td><%= card.review_date%></td>
+      <td><%= link_to 'Show', card_path(card)%></td>
+      <td><%= link_to 'Edit', edit_card_path(card) %></td>
+      <td><%= link_to 'Destroy', card_path(card),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <br>
-  <% end %>
+<% end %>
