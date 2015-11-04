@@ -14,6 +14,6 @@ data.xpath("//tr/td").each do |cell|
   if cell["class"] == "bigLetter"
     original = cell.content.to_s
     translated = cell.next_element.content.to_s
-    Card.create(original_text: original,translated_text: translated)
+    Card.create(original_text: original, translated_text: translated)
   end
 end
