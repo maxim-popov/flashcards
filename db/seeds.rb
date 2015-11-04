@@ -11,9 +11,9 @@ require "open-uri"
 vocabulary = []
 data = Nokogiri::HTML(open("http://www.languagedaily.com/learn-german/vocabulary/common-german-words"))
 data.xpath("//tr/td").each do |cell|
-    if cell["class"] == "bigLetter"
-      original = cell.content.to_s
-      translated = cell.next_element.content.to_s
-      Card.create(original_text: original,translated_text: translated)
+  if cell["class"] == "bigLetter"
+    original = cell.content.to_s
+    translated = cell.next_element.content.to_s
+    Card.create(original_text: original,translated_text: translated)
   end
 end
