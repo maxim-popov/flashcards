@@ -8,11 +8,11 @@ end
 
 class Card < ActiveRecord::Base
   before_validation :define_review_date
-  validates :original_text,:translated_text, presence: true
+  validates :original_text, :translated_text, presence: true
   validates_with CompareValidator
 
   protected
   def define_review_date
-    self.review_date = Time.now + 3.days
+    self.review_date = Time.zone.now + 3.days
   end
 end
