@@ -7,12 +7,12 @@ class CompareValidator < ActiveModel::Validator
 end
 
 class Card < ActiveRecord::Base
-	before_validation :define_review_date
-	validates :original_text,:translated_text, presence: true
-	validates_with CompareValidator
+  before_validation :define_review_date
+  validates :original_text,:translated_text, presence: true
+  validates_with CompareValidator
 
-    protected
-    	def define_review_date
-    		self.review_date = Time.now + 3.days
-        end
+  protected
+  def define_review_date
+    self.review_date = Time.now + 3.days
+  end
 end

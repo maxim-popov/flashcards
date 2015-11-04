@@ -1,19 +1,19 @@
 class CardsController < ApplicationController
   def index
-  	 @cards = Card.all
+    @cards = Card.all
   end
 
   def show
-    @cards = Card.find(params[:id]) 
+    @cards = Card.find(params[:id])
   end
 
   def new
-  	@cards = Card.new
+    @cards = Card.new
   end
 
   def edit
     @cards = Card.find(params[:id])
-  end 
+  end
 
   def create
     @cards = Card.new(card_params)
@@ -23,10 +23,10 @@ class CardsController < ApplicationController
       render 'new'
     end
   end
-  
+
   def update
     @cards = Card.find(params[:id])
- 
+
     if @cards.update(card_params)
       redirect_to @cards
     else
@@ -37,14 +37,14 @@ class CardsController < ApplicationController
   def destroy
     @cards = Card.find(params[:id])
     @cards.destroy
- 
+
     redirect_to @cards
   end
 
   private
-    def card_params
-      params.require(:card).permit(:original_text, :translated_text)
-    end
-
-
+  def card_params
+    params.require(:card).permit(:original_text, :translated_text)
   end
+
+
+end
