@@ -10,6 +10,17 @@ class Card < ActiveRecord::Base
   before_validation :define_review_date
   validates :original_text, :translated_text, presence: true
   validates_with CompareValidator
+  scope :review_3_days, -> { where("review_date < ?", Time.now) }
+
+  def check_translation(user_input)
+    if user_input == self.translated_text
+      self.review_date = Time.zone.now + 3.days
+      check_translation = true
+    else
+      check_translation = false
+    end
+    self.save
+  end
 
   protected
   def define_review_date

@@ -1,0 +1,13 @@
+<h3> Check your translation </h3>
+<p>Available: <%= @count %> cards </p>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
+<%= simple_form_for :user_input, { url: compare_path } do |f| %>
+  <%= f.input :translation, label: "Translation of word: " + @card.original_text %>
+  <%= f.hidden_field :id, value: @card.id  %>
+  <%= f.button :submit, "Check" %>
+<% end %>
+

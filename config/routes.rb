@@ -11,6 +11,8 @@ Flashcards::Application.routes.draw do
 
   resources :cards
   root 'home#index'
+  get 'check', to: 'cards#check'
+  post 'compare', to: 'cards#compare'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
