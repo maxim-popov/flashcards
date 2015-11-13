@@ -1,5 +1,0 @@
-<%= simple_form_for @cards do |f| %>
-  <%= f.input :original_text, label: 'Оригинальный текст' %>
-  <%= f.input :translated_text, label: 'Перевод' %>
-  <%= f.button :submit %>
-<% end %>
