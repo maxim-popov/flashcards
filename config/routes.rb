@@ -10,9 +10,9 @@ Flashcards::Application.routes.draw do
   # root 'welcome#index'
 
   resources :cards
-  root 'home#index'
-  get 'check', to: 'cards#check'
-  post 'compare', to: 'cards#compare'
+  root "home#index"
+  get "check", to: "cards#check"
+  post "compare", to: "cards#compare"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

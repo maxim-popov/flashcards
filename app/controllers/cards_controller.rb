@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   end
 
   def check
-    @count = Card.time_to_check_card.count 
+    @count = Card.time_to_check_card.count
     @card = Card.time_to_check_card.first
   end
 
@@ -39,7 +39,7 @@ class CardsController < ApplicationController
     end
   end
 
-  def updatesd
+  def update
     @cards = Card.find(params[:id])
 
     if @cards.update(card_params)
