@@ -24,6 +24,7 @@ class CardsController < ApplicationController
     if @cards.check_translation(params[:user_input][:translation])
       flash[:s] = "Right translation"
       @cards.set_review_date
+      @cards.save
     else
       flash[:f] = "Wrong translation, right answer - #{@cards.translated_text}."
     end
