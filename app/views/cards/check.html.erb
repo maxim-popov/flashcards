@@ -5,7 +5,6 @@
 <% else %>
 
 <h3> Check your translation</h3>
-<%= @count %> 
 
 <% flash.each do |name, msg| -%>
   <%= content_tag :div, msg, class: name %>
@@ -18,8 +17,3 @@
 <% end %>
 
 <% end %>
-
-
-
-
-
