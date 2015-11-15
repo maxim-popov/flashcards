@@ -21,11 +21,11 @@ class CardsController < ApplicationController
 
   def compare
     @cards = Card.find(params[:user_input][:id])
-    if @cards.check_translation(params[:user_input][:translation]) == false
-      flash[:f] = "Wrong translation, right answer - #{@cards.translated_text}."
-    else
+    if @cards.check_translation(params[:user_input][:translation])
       flash[:s] = "Right translation"
       @cards.set_review_date
+    else
+      flash[:f] = "Wrong translation, right answer - #{@cards.translated_text}."
     end
     redirect_to check_path
   end
