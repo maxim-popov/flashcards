@@ -17,7 +17,6 @@ class CardsController < ApplicationController
 
   def check
     @card = Card.time_to_check_card.first
-    @count = Card.time_to_check_card.count
   end
 
   def compare
