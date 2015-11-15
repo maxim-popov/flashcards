@@ -16,16 +16,16 @@ class CardsController < ApplicationController
   end
 
   def check
-    @count = Card.time_to_check_card.count
     @card = Card.time_to_check_card.first
+    @count = Card.time_to_check_card.count
   end
 
   def compare
     @cards = Card.find(params[:user_input][:id])
-    if @cards.check_translation(params[:user_input][:translation])
-      flash.now[:s] = "Right translation"
-    else
+    if @cards.check_translation(params[:user_input][:translation]) == false
       flash.now[:f] = "Wrong translation, right answer - #{@cards.translated_text}."
+    else
+      flash.now[:s] = "Right translation"
     end
     redirect_to check_path
   end

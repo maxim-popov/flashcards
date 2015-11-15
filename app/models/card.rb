@@ -13,13 +13,7 @@ class Card < ActiveRecord::Base
   scope :time_to_check_card, -> { where("review_date < ?", Time.zone.now).order("RANDOM()")}
 
   def check_translation(user_input)
-    if user_input == self.translated_text
-      define_review_date
-      self.save
-      check_translation = true
-    else
-      check_translation = false
-    end
+    return false ? user_input == self.translated_text : self.define_review_date && self.save
   end
 
   protected
