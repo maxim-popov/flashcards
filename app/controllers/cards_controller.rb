@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CardsController < ApplicationController
   def index
     @cards = Card.all
