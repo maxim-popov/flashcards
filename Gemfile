@@ -29,11 +29,12 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
-<<<<<<< HEAD
-=======
 gem 'pg'
 
->>>>>>> second-task
+gem 'simple_form'
+
+gem 'nokogiri'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

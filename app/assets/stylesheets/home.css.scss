@@ -1,9 +1,6 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-<<<<<<< HEAD
-=======
-
 #center {
 	top: 50%; /* Отступ в процентах от верхнего края окна */
 	left: 50%; /* Отступ в процентах от левого края окна */
@@ -42,7 +39,11 @@
   margin: 0 16px;
 }
 
+.select {
+    font-weight: 600; 
+}
+
 /* MISC */
 
 .clearfix:after {content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;} html[xmlns].clearfix{display:block;} * html .clearfix{height:1%;}
->>>>>>> second-task
+
