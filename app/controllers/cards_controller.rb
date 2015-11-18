@@ -42,7 +42,6 @@ class CardsController < ApplicationController
 
   def update
     @cards = Card.find(params[:id])
-
     if @cards.update(card_params)
       redirect_to @cards
     else
@@ -60,5 +59,4 @@ class CardsController < ApplicationController
   def card_params
     params.require(:card).permit(:original_text, :translated_text)
   end
-
 end
