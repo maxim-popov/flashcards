@@ -8,16 +8,16 @@ class CompareValidator < ActiveModel::Validator
 end
 
 class Card < ActiveRecord::Base
-  before_create :set_review_date
+  #before_create :set_review_date
   validates :original_text, :translated_text, presence: true
   validates_with CompareValidator
-  scope :time_to_check_card, -> { where("review_date < ?", Time.zone.now).order("RANDOM()")}
+  scope :cards_for_review, -> { where("review_date < ?", Date.today).order("RANDOM()")}
 
   def check_translation(user_input)
     user_input.mb_chars.downcase == self.translated_text.mb_chars.downcase
   end
 
   def set_review_date
-    self.review_date = Time.zone.now + 3.days
+    self.review_date = Date.today + 3.days
   end
 end
