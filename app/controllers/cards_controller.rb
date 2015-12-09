@@ -1,3 +1,4 @@
+# encoding: utf-8
 class CardsController < ApplicationController
   def index
     @cards = Card.all
@@ -16,7 +17,7 @@ class CardsController < ApplicationController
   end
 
   def check
-    @card = Card.time_to_check_card.first
+    @card = Card.cards_for_review.first
   end
 
   def compare
